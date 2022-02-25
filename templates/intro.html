@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Intro</title>
+        <!-- boxicon cdn -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Bootstrap CDN + JQuery Link -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- css in static folder-->
+        <link rel=stylesheet type=text/css href="{{ url_for('static',
+        filename='intro.css') }}">
+    </head>
+    <body>
+        <nav>
+            <p></p>
+            <div class="nav-title">
+                <h1><a href="http://lewigolski-bk.shop/">Toy</a></h1>
+                <p><a href="http://lewigolski-bk.shop/">우리의 프로젝트</a></p>
+            </div>
+            <div class="nav-submenu">
+                <a href="http://lewigolski-bk.shop/login"
+                    ><i class="bx bx-log-in"></i
+                ></a>
+            </div>
+        </nav>
+        <div class="header">
+            <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-indicators">
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    ></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active first">
+                        <div class="container">
+                            <h1>Hello</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Placeat eum quae distinctio
+                                iure quaerat dicta non asperiores praesentium
+                                eveniet doloremque temporibus sunt hic vel sit
+                                laudantium, fugiat tempora? Alias, nemo?
+                            </p>
+                            <a href="#" class="btn btn-lg btn-primary"
+                                >Sign Up Today</a
+                            >
+                        </div>
+                    </div>
+                    <div class="carousel-item second">
+                        <div class="container">
+                            <h1>Hello</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Placeat eum quae distinctio
+                                iure quaerat dicta non asperiores praesentium
+                                eveniet doloremque temporibus sunt hic vel sit
+                                laudantium, fugiat tempora? Alias, nemo?
+                            </p>
+                            <a href="#" class="btn btn-lg btn-primary"
+                                >Sign Up Today</a
+                            >
+                        </div>
+                    </div>
+                    <div class="carousel-item third">
+                        <div class="container">
+                            <h1>Hello</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Placeat eum quae distinctio
+                                iure quaerat dicta non asperiores praesentium
+                                eveniet doloremque temporibus sunt hic vel sit
+                                laudantium, fugiat tempora? Alias, nemo?
+                            </p>
+                            <a href="#" class="btn btn-lg btn-primary"
+                                >Sign Up Today</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                >
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                >
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <section class="profile">
+            <div class="profile-heading">
+                <h1>Meet Our Team Members</h1>
+            </div>
+            <div class="person-section">
+                <div class="person">
+                    <img src="/static/slide1.jpg" alt="" />
+                    <h6>강성지</h6>
+                    <p>팀장</p>
+                    <div class="icons">
+                        <i class="bx bxl-twitter"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-instagram"></i>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        프로필 보기
+                    </button>
+                </div>
+                <div class="person">
+                    <img src="/static/slide1.jpg" alt="" />
+                    <h6>박재철</h6>
+                    <p>-</p>
+                    <div class="icons">
+                        <i class="bx bxl-twitter"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-instagram"></i>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        프로필 보기
+                    </button>
+                </div>
+                <div class="person">
+                    <img src="/static/slide1.jpg" alt="" />
+                    <h6>윤영수</h6>
+                    <p>-</p>
+                    <div class="icons">
+                        <i class="bx bxl-twitter"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-instagram"></i>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        프로필 보기
+                    </button>
+                </div>
+                <div class="person">
+                    <img src="/static/slide1.jpg" alt="" />
+                    <h6>김재혁</h6>
+                    <p>-</p>
+                    <div class="icons">
+                        <i class="bx bxl-twitter"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-instagram"></i>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        프로필 보기
+                    </button>
+                </div>
+                <div class="person">
+                    <img src="/static/slide1.jpg" alt="" />
+                    <h6>한재혁</h6>
+                    <p>-</p>
+                    <div class="icons">
+                        <i class="bx bxl-twitter"></i>
+                        <i class="bx bxl-facebook"></i>
+                        <i class="bx bxl-instagram"></i>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm">
+                        프로필 보기
+                    </button>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

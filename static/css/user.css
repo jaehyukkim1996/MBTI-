@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=The+Nautigal&display=swap");
+
+* {
+    font-family: "Jua", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
+}
+
+.whole-page {
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
+    height: 100vh;
+    color: white;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+#email {
+    color: white;
+}
+
+#mbti {
+    color: white;
+}
+
+.celeb {
+    text-align: center;
+}
+
+.celeb-title {
+    font-size: 30px;
+}

@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=The+Nautigal&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+}
+
+body {
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
+}
+
+.whole_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.registration {
+    padding: 40px;
+    cursor: pointer;
+}
+
+.registration h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5%;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+img {
+    border-radius: 5%;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5%;
+}
+
+.flip-card-front {
+    background-color: white;
+    color: black;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 5%;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.one {
+    color: rgb(144, 175, 144);
+    border: 8px solid rgb(144, 175, 144);
+}
+
+.two {
+    color: rgb(95, 184, 161);
+    border: 8px solid rgb(95, 184, 161);
+}
+
+.three {
+    color: rgb(253, 94, 19);
+    border: 8px solid rgb(253, 94, 19);
+}
+
+.four {
+    color: rgb(130, 187, 93);
+    border: 8px solid rgb(130, 187, 93);
+}
+
+.five {
+    color: rgb(91, 61, 138);
+    border: 8px solid rgb(91, 61, 138);
+}
+
+.six {
+    color: rgb(199, 54, 54);
+    border: 8px solid rgb(199, 54, 54);
+}
+
+.seven {
+    color: rgb(236, 135, 52);
+    border: 8px solid rgb(236, 135, 52);
+}
+
+.eight {
+    color: rgb(165, 93, 187);
+    border: 8px solid rgb(165, 93, 187);
+}
+
+.nine {
+    color: rgb(65, 188, 236);
+    border: 8px solid rgb(65, 188, 236);
+}
+
+.ten {
+    color: rgb(65, 136, 89);
+    border: 8px solid rgb(65, 136, 89);
+}
+
+.eleven {
+    color: rgb(247, 183, 47);
+    border: 8px solid rgb(247, 183, 47);
+}
+
+.twelve {
+    color: rgb(37, 98, 100);
+    border: 8px solid rgb(37, 98, 100);
+}
+
+.thirteen {
+    color: rgb(171, 201, 123);
+    border: 8px solid rgb(171, 201, 123);
+}
+
+.fourteen {
+    color: rgb(228, 58, 214);
+    border: 8px solid rgb(228, 58, 214);
+}
+
+.fifteen {
+    color: rgb(42, 31, 109);
+    border: 8px solid rgb(42, 31, 109);
+}
+
+.sixteen {
+    color: rgb(228, 100, 41);
+    border: 8px solid rgb(228, 100, 41);
+}

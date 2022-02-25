@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=The+Nautigal&display=swap");
+
+body {
+    height: 100vh;
+    font-family: "Jua", sans-serif;
+}
+
+.whole_page {
+    height: 100vh;
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.whole_page .title {
+    /* border: solid 2px black; */
+    width: 250px;
+    font-size: 100px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    cursor: pointer;
+}
+
+.whole_page .sub_title {
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.whole_page .sub_title_color {
+    color: white;
+}
+
+.whole_page .logo_img {
+    height: 50px;
+    width: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 1s ease;
+}
+
+.whole_page .logo_img:hover {
+    transform: rotate(360deg);
+}
+
+/* login div */
+
+.login {
+    margin-top: 20px;
+    position: relative;
+}
+
+.login-register {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.login-register button {
+    margin-top: 10px;
+    color: white;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(247, 201, 208);
+    outline: none;
+    font-size: 2em;
+    color: white;
+    min-width: 350px;
+    transition: all 0.1s ease;
+    opacity: 0.8;
+}
+
+label {
+    position: absolute;
+    left: 1px;
+    color: white;
+    transform-origin: 0 0;
+    transition: transform 0.1s ease-in-out;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    transform: translateY(-1em) scale(0.8);
+}
+
+input:focus {
+    border: solid 2px white;
+    opacity: 1;
+}
+
+/* register button */
+
+.login-btn {
+    margin-top: 20px;
+    border: none;
+    text-decoration: underline;
+}
+
+/* external login */
+
+.external-login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.external-login button i {
+    font-weight: 600;
+}
+
+.external-login button {
+    margin: 10px;
+}
+
+.google {
+    color: white;
+    opacity: 0.85;
+    text-align: left;
+}
+
+.google i {
+    margin-right: 20px;
+}
+
+.google:focus {
+    background: rgb(240, 55, 55);
+}
+
+.register {
+    background: rgb(147, 197, 71);
+    text-align: left;
+}
+
+.register:focus {
+    background: rgb(159, 211, 80);
+}
+
+.register:hover {
+    background: rgb(159, 211, 80);
+}
+
+.register img {
+    height: 18px;
+    margin-right: 25px;
+}
+
+/* From here is the CSS for login-success */
+
+.login-success {
+    display: none;
+}

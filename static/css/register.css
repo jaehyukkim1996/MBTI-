@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=The+Nautigal&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.mbti {
+    display: none;
+}
+
+.whole_page {
+    height: 100vh;
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.whole_page .title {
+    /* border: solid 2px black; */
+    width: 250px;
+    font-size: 100px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    cursor: pointer;
+}
+
+.whole_page .sub_title {
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.whole_page .sub_title_color {
+    color: white;
+}
+
+.whole_page .logo_img {
+    height: 50px;
+    width: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 1s ease;
+}
+
+.whole_page .logo_img:hover {
+    transform: rotate(360deg);
+}
+
+.whole_page .registration h1 {
+    color: white;
+}
+
+/*  register form  */
+
+.register {
+    margin-top: 20px;
+    position: relative;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(247, 201, 208);
+    outline: none;
+    font-size: 2em;
+    color: white;
+    min-width: 350px;
+    transition: all 0.1s ease;
+    opacity: 0.8;
+}
+
+label {
+    position: absolute;
+    left: 1px;
+    color: white;
+    transform-origin: 0 0;
+    transition: transform 0.1s ease-in-out;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    transform: translateY(-1em) scale(0.8);
+}
+
+input:focus {
+    border: solid 2px white;
+    opacity: 1;
+}
+
+/*  login button  */
+
+.login-btn {
+    margin-top: 20px;
+    border: none;
+    text-decoration: underline;
+    font-size: 30px;
+    color: white;
+}
+
+/* wrong password entered + email   */
+
+.wrong_email {
+    border: solid 1px red;
+}
+
+.email_confirm {
+    position: relative;
+}
+
+.email_confirm .email_text_msg {
+    display: none;
+    position: absolute;
+    left: 0;
+}
+
+.wrong_password {
+    border: solid 1px red;
+}
+
+.confirm {
+    position: relative;
+}
+
+.confirm .password_text_msg {
+    display: none;
+    position: absolute;
+    left: 0;
+}
+
+.shake {
+    animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(1em);
+    }
+    40% {
+        transform: translate(-1em);
+    }
+    60% {
+        transform: translate(1em);
+    }
+    80% {
+        transform: translate(-1em);
+    }
+    100% {
+        transform: translate(0);
+    }
+}

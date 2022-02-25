@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=The+Nautigal&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jua", sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background: linear-gradient(to bottom right, #badce9, #61c0e9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    color: white;
+}
+
+nav .nav-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: 65px;
+}
+
+.nav-title p {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.nav-title a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-submenu {
+    margin-top: 10px;
+    margin-right: 25px;
+    font-size: 40px;
+}
+
+.nav-submenu a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    margin-top: 75px;
+}
+
+.carousel-item {
+    height: 32rem;
+    color: white;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.first {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("/static/slide1.jpg");
+}
+.second {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("/static/slide2.jpg");
+}
+.third {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("/static/slide3.jpg");
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+}
+
+.profile {
+    padding-top: 80px;
+    background: linear-gradient(to bottom right, #badce9, #61c0e9);
+    color: white;
+}
+
+.profile-heading {
+    text-align: center;
+}
+
+.person-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.person {
+    margin: 30px;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(70deg, #363a41, #575f6b);
+    border-radius: 5px;
+}
+
+.person img {
+    height: 60%;
+    width: 100%;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+
+.person h6 {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.person p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons i {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.person button {
+    width: 100%;
+}
+
+@media (max-width: 1500px) {
+    .person-section {
+        flex-direction: column;
+    }
+    .person {
+        width: 400px;
+        height: 600px;
+    }
+}
