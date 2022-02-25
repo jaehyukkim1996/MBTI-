@@ -33,7 +33,7 @@ function login() {
 }
 
 function register() {
-    window.location.assign("http://localhost:5000/registration");
+    window.location.assign("http://localhost:7000/registration");
 }
 
 function forgotpassword() {
