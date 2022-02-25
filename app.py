@@ -302,6 +302,7 @@ def user_get():
     # print(user_list)
     return jsonify({'user_list': user_list})
 
+
 # 포트는 5000으로 설정함
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5003, debug=True)
