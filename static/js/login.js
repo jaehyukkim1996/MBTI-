@@ -20,6 +20,7 @@ function login() {
                         data: { email: inputemail },
                         success: window.location.assign(
                             "http://localhost:5003/user"
+                            "http://localhost:5000/user"
                         ),
                     });
                 } else {
@@ -38,6 +39,7 @@ function register() {
 =======
     window.location.assign("http://localhost:5003/registration");
 >>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
+    window.location.assign("http://localhost:5000/registration");
 }
 
 function forgotpassword() {

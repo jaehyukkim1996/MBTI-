@@ -5,10 +5,13 @@ import requests
 from bs4 import BeautifulSoup
 
 from pymongo import MongoClient
+import certifi
 
 client = MongoClient(
     '')
 db = client.dblewigolski
+client = MongoClient('mongodb+srv://test:sparta@cluster0.citdv.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=certifi.where())
+db = client.dbsparta
 
 app = Flask(__name__)
 
@@ -286,8 +289,21 @@ def celeb():
         print(list_entj)
         return jsonify({'msg': list_entj})
 
+# 그래프 페이지
 
 # 포트는 5000으로 설정함 
+@app.route('/graph')
+def graph():
+    return render_template('graph.html')
+
+@app.route("/mbtiList", methods=["GET"])
+def user_get():
+    user_list = list(db.prac.find({}, {'_id': False}))
+    # print(user_list)
+    return jsonify({'user_list': user_list})
+
+# 포트는 5000으로 설정함
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5003, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
 

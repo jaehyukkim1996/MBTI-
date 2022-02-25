@@ -16,6 +16,7 @@ function register() {
 =======
                     "http://localhost:5003/registration/mbti"
 >>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
+                    "http://localhost:5000/registration/mbti"
                 );
             },
         });
@@ -50,4 +51,5 @@ function return_home() {
 =======
     window.location.assign("http://localhost:5003/login");
 >>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
+    window.location.assign("http://localhost:5000/login");
 }
