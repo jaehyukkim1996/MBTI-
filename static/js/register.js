@@ -11,7 +11,7 @@ function register() {
             success: function (response) {
                 alert(`${response["msg"]}`);
                 window.location.assign(
-                    "http://localhost:7000/registration/mbti"
+                    "http://localhost:5000/registration/mbti"
                 );
             },
         });
@@ -41,5 +41,5 @@ function register() {
 }
 
 function return_home() {
-    window.location.assign("http://localhost:7000/login");
+    window.location.assign("http://localhost:5000/login");
 }
