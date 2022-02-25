@@ -14,6 +14,7 @@ function register() {
 <<<<<<< HEAD
                     "http://localhost:7000/registration/mbti"
 =======
+                    "http://localhost:5003/registration/mbti"
 >>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
                 );
             },
@@ -47,5 +48,6 @@ function return_home() {
 <<<<<<< HEAD
     window.location.assign("http://localhost:7000/login");
 =======
+    window.location.assign("http://localhost:5003/login");
 >>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
 }

@@ -104,6 +104,7 @@ function post_mbti(mbti) {
 <<<<<<< HEAD
             window.location.assign("http://localhost:7000/user");
 =======
+            window.location.assign("http://localhost:5003/user");
 >>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
         },
     });
