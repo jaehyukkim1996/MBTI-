@@ -101,7 +101,10 @@ function post_mbti(mbti) {
         data: { mbti: mbti },
         success: function (response) {
             alert(`환영합니다! 홈페이지로 이동합니다!`);
+<<<<<<< HEAD
             window.location.assign("http://localhost:7000/user");
+=======
+>>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
         },
     });
 }

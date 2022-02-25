@@ -11,7 +11,10 @@ function register() {
             success: function (response) {
                 alert(`${response["msg"]}`);
                 window.location.assign(
+<<<<<<< HEAD
                     "http://localhost:7000/registration/mbti"
+=======
+>>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
                 );
             },
         });
@@ -41,5 +44,8 @@ function register() {
 }
 
 function return_home() {
+<<<<<<< HEAD
     window.location.assign("http://localhost:7000/login");
+=======
+>>>>>>> 3e487abcec3c794aec99d2099c0a41916afb9882
 }
