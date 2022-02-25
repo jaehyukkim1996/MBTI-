@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
 client = MongoClient(
+    '')
 db = client.dblewigolski
 
 app = Flask(__name__)
@@ -288,4 +289,5 @@ def celeb():
 
 # 포트는 5000으로 설정함 
 if __name__ == '__main__':
+    app.run('0.0.0.0', port=5003, debug=True)
 
