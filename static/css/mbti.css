@@ -8,11 +8,7 @@
 }
 
 body {
-    background: linear-gradient(
-        to bottom right,
-        rgba(36, 37, 42),
-        rgb(50, 51, 58)
-    );
+    background-color: #24252A
 }
 
 .whole_page {
