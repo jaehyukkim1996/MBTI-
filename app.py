@@ -290,7 +290,11 @@ def celeb():
 
 @app.route('/graph')
 def graph():
-    return render_template('graph.html')
+    if "user" in session:
+        return render_template("graph.html")
+    if "register" in session and "register_mbti" in session:
+        return render_template("graph.html")
+    return render_template("login.html")
 
 @app.route("/mbtiList", methods=["GET"])
 def user_get():

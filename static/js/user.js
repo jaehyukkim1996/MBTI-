@@ -19,3 +19,7 @@ function listing() {
         },
     });
 }
+
+function logout() {
+    window.location.assign("http://localhost:5000/logout");
+}
