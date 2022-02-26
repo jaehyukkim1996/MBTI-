@@ -1,64 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #24252A;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-li, a, button {
-    font-family: "Monsterrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
-    text-decoration: none;
-}
+        body {
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #24252A;
+        }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    position: fixed;
-    width: 100%
+        .title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 70px;
+        }
 
-}
+        .chart-container {
+            {#height:#}
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
 
-.logo {
-    cursor: pointer;
-    width: 133px;
-}
+        #myChart {
+            margin: 0 auto;
+        }
 
-.nav__links {
-    list-style: none;
-}
+        .mbti-circles {
+            display: flex;
+        }
 
-.nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
-}
+        .mbti-circle {
+            position: relative;
+            margin: 20px 35px;
+        }
 
-.nav__links li a {
-    transition: all 0.3s ease 0s;
-}
+        .left {
+            position: absolute;
+            left: 0;
+            top: 155px;
+        }
 
-.nav__links li a:hover {
-    color: #0088a9
-}
+        .right {
+            position: absolute;
+            right: 0;
+            top: 155px;
+        }
 
-button {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
+        li, a, button {
+            font-family: "Monsterrat", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #edf0f1;
+            text-decoration: none;
+        }
 
-button:hover {
-    background-color: rgba(0, 136, 169, 0.8);
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            width: 100%
 
-.test {
-    color: white;
+        }
+
+        .logo {
+            cursor: pointer;
+            width: 133px;
+        }
+
+        .nav__links {
+            list-style: none;
+            text-align: center;
+            margin: auto;
+            /*display: -webkit-box;*/
+            /*display: flex;*/
+            /*-webkit-box-pack: center;*/
+            /*        justify-content: center;*/
+            /*flex-wrap: wrap;*/
+            /*padding: 0;*/
+        }
+
+        .nav__links li {
+            display: inline-block;
+            padding: 0px 20px;
+        }
+
+        .nav__links li a {
+            transition: all 0.3s ease 0s;
+            padding: 6px 12px;
+            /*display: block;*/
+            /*font-size: 20px;*/
+            /*text-decoration: none;*/
+            /*padding: 1px 15px;*/
+        }
+
+        .nav__links li a:hover {
+            color: #0088a9;
+            border-bottom: 2px solid;
+        }
+
+
+
+
+        /*.target {*/
+        /*    position: absolute;*/
+        /*    border-bottom: 4px solid transparent;*/
+        /*    cursor: pointer;*/
+        /*}*/
+
+        /*.mynav a,*/
+        /*.target {*/
+        /*    -webkit-transition: all .35s ease-in-out;*/
+        /*    transition: all .35s ease-in-out;*/
+        /*}*/
+
+        button {
+            padding: 9px 25px;
+            background-color: rgba(0, 136, 169, 1);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+
+        button:hover {
+            background-color: rgba(0, 136, 169, 0.8);
+        }
+
+        .test {
+            color: white;
+
+        }
+

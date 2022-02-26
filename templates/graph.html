@@ -16,148 +16,10 @@
             crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename= 'css/graph.css') }}">
 
-    <title>항해99 6기 MBTI</title>
+    <title>#MBTI99_graph</title>
 
-    <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            height: 100vh;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #24252A;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 70px;
-        }
-
-        .chart-container {
-            {#height:#}
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-
-        #myChart {
-            margin: 0 auto;
-        }
-
-        .mbti-circles {
-            display: flex;
-        }
-
-        .mbti-circle {
-            position: relative;
-            margin: 20px 35px;
-        }
-
-        .left {
-            position: absolute;
-            left: 0;
-            top: 155px;
-        }
-
-        .right {
-            position: absolute;
-            right: 0;
-            top: 155px;
-        }
-
-        li, a, button {
-            font-family: "Monsterrat", sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #edf0f1;
-            text-decoration: none;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 10%;
-            width: 100%
-
-        }
-
-        .logo {
-            cursor: pointer;
-            width: 133px;
-        }
-
-        .nav__links {
-            list-style: none;
-            text-align: center;
-            margin: auto;
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-pack: center;
-                    justify-content: center;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-
-        .nav__links li {
-            display: inline-block;
-            padding: 0px 20px;
-        }
-
-        .nav__links li a {
-            transition: all 0.3s ease 0s;
-            display: block;
-            font-size: 20px;
-            text-decoration: none;
-            padding: 1px 15px;
-        }
-
-        .nav__links li a:hover {
-            color: #0088a9
-        }
-
-        .target {
-            position: absolute;
-            border-bottom: 4px solid transparent;
-        }
-
-        .mynav a,
-        .target {
-            -webkit-transition: all .35s ease-in-out;
-            transition: all .35s ease-in-out;
-        }
-
-        button {
-            padding: 9px 25px;
-            background-color: rgba(0, 136, 169, 1);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-        }
-
-        button:hover {
-            background-color: rgba(0, 136, 169, 0.8);
-        }
-
-        .test {
-            color: white;
-
-        }
-
-    </style>
     <script>
         let user_mbti = "intj";
         $(document).ready(function () {
@@ -590,69 +452,69 @@
     <a class="logo">MBTI</a>
     <nav class="mynav">
         <ul class="nav__links">
-            <li><a href="/graph">통계</a></li>
-            <li><a href="/user">나랑 같은 MBTI</a></li>
+            <li><a href="/user">나의 MBTI</a></li>
+            <li><a href="/graph">항해 TI</a></li>
             <li><a href="/add_page">추가기능</a></li>
         </ul>
     </nav>
-    <span class="target"></span>
+    {#    <span class="target"></span>#}
     <a class="cta" href="#">
         <button>About 18조</button>
     </a>
 
-        <script>
-        const target = document.querySelector('.target')
-        const links = document.querySelectorAll('.mynav a')
-        const colors = ['deepskyblue','orange','black','gold','green','pink','yellow']
-
-        //링크색상 변경
-        // links[0].addEventListener('click', function (){})
-
-        for ( let i = 0; i < links.length; i++ ) {
-            links[i].addEventListener('click', (e) => e.preventDefault())
-            links[i].addEventListener('mouseenter', mouseenterFunc)
-        }
-
-        function mouseenterFunc() {
-            if (!this.parentNode.classList.contains('active')) {
-                for ( let i=0; i < links.length; i++) {
-                    if( links[i].parentNode.classList.contains('active')){
-                        links[i].parentNode.classList.remove(('active'))
-                    }
-                    links[i].style.opacity = '0.25';
-                }//마우스가 올라가지않은 다른메뉴들 마다 할일
-
-                this.parentNode.classList.add('active')
-                this.style.opacity = '1'
-
-                const width = this.getBoundingClientRect().width
-                const height = this.getBoundingClientRect().height
-                const left = this.getBoundingClientRect().left + window.pageXOffset
-                const top = this.getBoundingClientRect().top + window.pageYOffset
-                const color = colors[Math.floor(Math.random() * links.length)]
-
-                target.style.width = `${width}px`
-                target.style.height = `${height}px`
-                target.style.left = `${left}px`
-                target.style.right = `${top}px`
-                target.style.borderColor = color;
-
-            }
-        }
-
-        function resizeFunc() {
-            const active = document.querySelector('.mynav li.active')
-
-            if(active) {
-                const left = active.getBoundingClientRect().left + window.pageXOffset
-                const top = active.getBoundingClientRect().top + window.pageYOffset
-
-                target.style.left = `${left}px`
-                target.style.right = `${top}px`
-            }
-        }
-        window.addEventListener('resize', resizeFunc)
-    </script>
+{#        <script>#}
+{#        const target = document.querySelector('.target')#}
+{#        const links = document.querySelectorAll('.mynav a')#}
+{#        const colors = ['deepskyblue','orange','black','gold','green','pink','yellow']#}
+{##}
+{#        //링크색상 변경#}
+{#        // links[0].addEventListener('click', function (){})#}
+{##}
+{#        for ( let i = 0; i < links.length; i++ ) {#}
+{#            links[i].addEventListener('click', (e) => e.preventDefault())#}
+{#            links[i].addEventListener('mouseenter', mouseenterFunc)#}
+{#        }#}
+{##}
+{#        function mouseenterFunc() {#}
+{#            if (!this.parentNode.classList.contains('active')) {#}
+{#                for ( let i=0; i < links.length; i++) {#}
+{#                    if( links[i].parentNode.classList.contains('active')){#}
+{#                        links[i].parentNode.classList.remove(('active'))#}
+{#                    }#}
+{#                    links[i].style.opacity = '0.25';#}
+{#                }//마우스가 올라가지않은 다른메뉴들 마다 할일#}
+{##}
+{#                this.parentNode.classList.add('active')#}
+{#                this.style.opacity = '1'#}
+{##}
+{#                const width = this.getBoundingClientRect().width#}
+{#                const height = this.getBoundingClientRect().height#}
+{#                const left = this.getBoundingClientRect().left + window.pageXOffset#}
+{#                const top = this.getBoundingClientRect().top + window.pageYOffset#}
+{#                const color = colors[Math.floor(Math.random() * links.length)]#}
+{##}
+{#                target.style.width = `${width}px`#}
+{#                target.style.height = `${height}px`#}
+{#                target.style.left = `${left}px`#}
+{#                target.style.right = `${top}px`#}
+{#                target.style.borderColor = color;#}
+{##}
+{#            }#}
+{#        }#}
+{##}
+{#        function resizeFunc() {#}
+{#            const active = document.querySelector('.mynav li.active')#}
+{##}
+{#            if(active) {#}
+{#                const left = active.getBoundingClientRect().left + window.pageXOffset#}
+{#                const top = active.getBoundingClientRect().top + window.pageYOffset#}
+{##}
+{#                target.style.left = `${left}px`#}
+{#                target.style.right = `${top}px`#}
+{#            }#}
+{#        }#}
+{#        window.addEventListener('resize', resizeFunc)#}
+{#    </script>#}
 </header>
 
 

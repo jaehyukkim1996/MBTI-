@@ -42,10 +42,12 @@ header {
 
 .nav__links li a {
     transition: all 0.3s ease 0s;
+    padding: 6px 12px;
 }
 
 .nav__links li a:hover {
-    color: #0088a9
+    color: #0088a9;
+    border-bottom: 2px solid;
 }
 
 button {

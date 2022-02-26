@@ -298,6 +298,12 @@ def user_get():
     # print(user_list)
     return jsonify({'user_list': user_list})
 
+# add_page 페이지
+
+@app.route('/add_page')
+def comingsooon():
+    return render_template('add_page.html')
+
 
 # 포트는 5000으로 설정함
 if __name__ == '__main__':
