@@ -119,7 +119,10 @@ def postmbti():
     session["register_mbti"] = request.form["mbti"]
     register_mbti = session["register_mbti"]
     register_user = session["register"]
+    mbti_list = register_mbti.lower()
+    # print(mbti_list, register_mbti) mbti 대소문자 구분 (그래프용)
     db.login.update_one({"email": register_user},{'$set':{"mbti": register_mbti }})
+    db.prac.insert_one({"mbti":mbti_list})
     return redirect(url_for("user"))
 
 
@@ -299,6 +302,7 @@ def graph():
 @app.route("/mbtiList", methods=["GET"])
 def user_get():
     user_list = list(db.prac.find({}, {'_id': False}))
+    print(user_list)
     # print(user_list)
     return jsonify({'user_list': user_list})
 

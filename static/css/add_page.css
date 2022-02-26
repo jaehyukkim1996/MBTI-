@@ -26,7 +26,7 @@ header {
 
 .logo {
     cursor: pointer;
-    width: 133px;
+    width: 160px;
 }
 
 .nav__links {
@@ -75,4 +75,18 @@ button:hover {
     display:table-cell;
     font-size: 60px;
     color: white;
+}
+
+.logout {
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #0088a9;
+}
+
+.logo_box {
+    width: 250px;
+    text-align: center;
 }

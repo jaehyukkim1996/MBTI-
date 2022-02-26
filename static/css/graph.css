@@ -1,142 +1,130 @@
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            height: 100vh;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #24252A;
-        }
+    body {
+        height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #24252A;
+    }
 
-        .title {
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 70px;
-        }
+    .title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 70px;
+    }
 
-        .chart-container {
-            {#height:#}
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
+    .chart-container {
+        #height:
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
 
-        #myChart {
-            margin: 0 auto;
-        }
+    #myChart {
+        margin: 0 auto;
+    }
 
-        .mbti-circles {
-            display: flex;
-        }
+    .mbti-circles {
+        display: flex;
+    }
 
-        .mbti-circle {
-            position: relative;
-            margin: 20px 35px;
-        }
+    .mbti-circle {
+        position: relative;
+        margin: 20px 35px;
+    }
 
-        .left {
-            position: absolute;
-            left: 0;
-            top: 155px;
-        }
+    .left {
+        position: absolute;
+        left: 0;
+        top: 155px;
+    }
 
-        .right {
-            position: absolute;
-            right: 0;
-            top: 155px;
-        }
+    .right {
+        position: absolute;
+        right: 0;
+        top: 155px;
+    }
 
-        li, a, button {
-            font-family: "Monsterrat", sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #edf0f1;
-            text-decoration: none;
-        }
+    li, a, button {
+        font-family: "Monsterrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #edf0f1;
+        text-decoration: none;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 10%;
-            width: 100%
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+        width: 100%
+    }
 
-        }
+    .nav__links {
+        list-style: none;
+        text-align: center;
+        margin: auto;
+    }
 
-        .logo {
-            cursor: pointer;
-            width: 133px;
-        }
+    .nav__links li {
+        display: inline-block;
+        padding: 0px 20px;
+    }
 
-        .nav__links {
-            list-style: none;
-            text-align: center;
-            margin: auto;
-            /*display: -webkit-box;*/
-            /*display: flex;*/
-            /*-webkit-box-pack: center;*/
-            /*        justify-content: center;*/
-            /*flex-wrap: wrap;*/
-            /*padding: 0;*/
-        }
+    .nav__links li a {
+        transition: all 0.3s ease 0s;
+        padding: 6px 12px;
 
-        .nav__links li {
-            display: inline-block;
-            padding: 0px 20px;
-        }
+    }
 
-        .nav__links li a {
-            transition: all 0.3s ease 0s;
-            padding: 6px 12px;
-            /*display: block;*/
-            /*font-size: 20px;*/
-            /*text-decoration: none;*/
-            /*padding: 1px 15px;*/
-        }
+    .nav__links li a:hover {
+        color: #0088a9;
+        border-bottom: 2px solid;
+    }
 
-        .nav__links li a:hover {
-            color: #0088a9;
-            border-bottom: 2px solid;
-        }
+    button {
+        padding: 9px 25px;
+        background-color: rgba(0, 136, 169, 1);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
 
+    button:hover {
+        background-color: rgba(0, 136, 169, 0.8);
+    }
 
+    .test {
+        color: white;
+    }
 
+    .logout {
+        display: inline-block;
+        margin-left: 50px;
+        margin-right: 20px;
+        cursor: pointer;
+        font-size: 12px;
+        color: #0088a9;
+    }
 
-        /*.target {*/
-        /*    position: absolute;*/
-        /*    border-bottom: 4px solid transparent;*/
-        /*    cursor: pointer;*/
-        /*}*/
+    .logo_box {
+        width: 250px;
+        text-align: center;
+    }
 
-        /*.mynav a,*/
-        /*.target {*/
-        /*    -webkit-transition: all .35s ease-in-out;*/
-        /*    transition: all .35s ease-in-out;*/
-        /*}*/
-
-        button {
-            padding: 9px 25px;
-            background-color: rgba(0, 136, 169, 1);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-        }
-
-        button:hover {
-            background-color: rgba(0, 136, 169, 0.8);
-        }
-
-        .test {
-            color: white;
-
-        }
+    .logo {
+        cursor: pointer;
+        width: 160px;
+    }
 

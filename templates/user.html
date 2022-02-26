@@ -36,7 +36,9 @@
     </head>
     <body>
         <header>
-            <a class="logo">MBTI</a>
+            <div class="logo_box">
+                <img class="logo" src="{{ url_for('static', filename='img/logo2.jpg') }}" alt="logo">
+            </div>
             <nav>
                 <ul class="nav__links">
                     <li><a href="/user">나의 MBTI</a></li>
@@ -44,10 +46,12 @@
                     <li><a href="/add_page">추가기능</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#">
-                <button>About 18조</button>
-            </a>
-            <button onclick="logout()">로그아웃</button>
+            <div>
+                <a class="cta" href="#">
+                    <button>About 18조</button>
+                </a>
+                <li class="logout" onclick="logout()">로그아웃</li>
+            </div>
         </header>
 
         <div class="whole-page">

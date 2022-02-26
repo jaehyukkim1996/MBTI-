@@ -21,10 +21,13 @@
     <title>#MBTI99_graph</title>
 
     <script>
-        let user_mbti = "intj";
         $(document).ready(function () {
             show_stat();
         });
+
+        function logout() {
+            window.location.assign("http://localhost:5000/logout");
+        }
 
         function show_stat() {
             $.ajax({
@@ -32,6 +35,13 @@
                 url: "/mbtiList",
                 data: {},
                 success: function (response) {
+                    {#console.log(response)#}
+                    let mbti_length = response['user_list'].length
+                    {#console.log(mbti_length)#}
+                    let usermbti = response['user_list'][(mbti_length)-1]['mbti']
+                    {#console.log(user_mbti)#}
+                    let user_mbti = usermbti.split('')
+                    {#console.log(user_mbti)#}
                     let mbti_arr = [
                         {mbti: "istj", count: 0},
                         {mbti: "istp", count: 0},
@@ -66,6 +76,7 @@
                     for (let i = 0; i < rows.length; i++) {
                         let mbti = rows[i]["mbti"];
                         `1`;
+                        {#console.log(mbti)#}
                         switch (mbti) {
                             case "istj":
                                 mbti_arr[0].count += 1;
@@ -74,6 +85,7 @@
                                 mbti_detail.t += 1;
                                 mbti_detail.j += 1;
                                 break;
+
                             case "istp":
                                 mbti_arr[1].count += 1;
                                 mbti_detail.i += 1;
@@ -181,6 +193,12 @@
                                 break;
                         }
                     }
+
+                    {#console.log(mbti_arr[0])#}
+                    {#console.log(mbti_detail.i)#}
+                    {#console.log(mbti_detail.s)#}
+                    {#console.log(mbti_detail.t)#}
+                    {#console.log(mbti_detail.j)#}
 
                     const ctx = $("#myChart");
                     let dataSet = mbti_arr.map((obj) => obj.count);
@@ -449,72 +467,23 @@
 </head>
 <body>
 <header>
-    <a class="logo">MBTI</a>
-    <nav class="mynav">
+    <div class="logo_box">
+        <img class="logo" src="{{ url_for('static', filename='img/logo2.jpg') }}" alt="logo">
+    </div>
+    <nav>
         <ul class="nav__links">
             <li><a href="/user">나의 MBTI</a></li>
             <li><a href="/graph">항해 TI</a></li>
             <li><a href="/add_page">추가기능</a></li>
         </ul>
     </nav>
-    {#    <span class="target"></span>#}
+    <div>
     <a class="cta" href="#">
         <button>About 18조</button>
     </a>
+    <li class="logout" onclick="logout()">로그아웃</li>
+    </div>
 
-{#        <script>#}
-{#        const target = document.querySelector('.target')#}
-{#        const links = document.querySelectorAll('.mynav a')#}
-{#        const colors = ['deepskyblue','orange','black','gold','green','pink','yellow']#}
-{##}
-{#        //링크색상 변경#}
-{#        // links[0].addEventListener('click', function (){})#}
-{##}
-{#        for ( let i = 0; i < links.length; i++ ) {#}
-{#            links[i].addEventListener('click', (e) => e.preventDefault())#}
-{#            links[i].addEventListener('mouseenter', mouseenterFunc)#}
-{#        }#}
-{##}
-{#        function mouseenterFunc() {#}
-{#            if (!this.parentNode.classList.contains('active')) {#}
-{#                for ( let i=0; i < links.length; i++) {#}
-{#                    if( links[i].parentNode.classList.contains('active')){#}
-{#                        links[i].parentNode.classList.remove(('active'))#}
-{#                    }#}
-{#                    links[i].style.opacity = '0.25';#}
-{#                }//마우스가 올라가지않은 다른메뉴들 마다 할일#}
-{##}
-{#                this.parentNode.classList.add('active')#}
-{#                this.style.opacity = '1'#}
-{##}
-{#                const width = this.getBoundingClientRect().width#}
-{#                const height = this.getBoundingClientRect().height#}
-{#                const left = this.getBoundingClientRect().left + window.pageXOffset#}
-{#                const top = this.getBoundingClientRect().top + window.pageYOffset#}
-{#                const color = colors[Math.floor(Math.random() * links.length)]#}
-{##}
-{#                target.style.width = `${width}px`#}
-{#                target.style.height = `${height}px`#}
-{#                target.style.left = `${left}px`#}
-{#                target.style.right = `${top}px`#}
-{#                target.style.borderColor = color;#}
-{##}
-{#            }#}
-{#        }#}
-{##}
-{#        function resizeFunc() {#}
-{#            const active = document.querySelector('.mynav li.active')#}
-{##}
-{#            if(active) {#}
-{#                const left = active.getBoundingClientRect().left + window.pageXOffset#}
-{#                const top = active.getBoundingClientRect().top + window.pageYOffset#}
-{##}
-{#                target.style.left = `${left}px`#}
-{#                target.style.right = `${top}px`#}
-{#            }#}
-{#        }#}
-{#        window.addEventListener('resize', resizeFunc)#}
-{#    </script>#}
 </header>
 
 
