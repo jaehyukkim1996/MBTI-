@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>환영해요 {{user}}</title>
         <!-- Bootstrap CDN + JQuery Link -->
@@ -12,8 +12,13 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet" href="">
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
+            rel="stylesheet"
+            href=""
+        />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script
@@ -23,9 +28,11 @@
         ></script>
         <!-- 로그인/회원가입 후 "홈페이지" CSS-->
         <link rel=stylesheet type=text/css href="{{ url_for('static',
-        filename='css/user.css') }}">
-        {#        메뉴 네비게이션 바 CSS#}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/nav_bar.css') }}">
+        filename='css/user.css') }}"> {# 메뉴 네비게이션 바 CSS#}
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/nav_bar.css') }}"
+        />
     </head>
     <body>
         <header>
@@ -40,6 +47,7 @@
             <a class="cta" href="#">
                 <button>About 18조</button>
             </a>
+            <button onclick="logout()">로그아웃</button>
         </header>
 
         <div class="whole-page">
