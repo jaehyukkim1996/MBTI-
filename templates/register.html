@@ -46,7 +46,7 @@
                         id="name"
                         placeholder=" "
                     />
-                    <label for="password">이름</label>
+                    <label for="name">이름</label>
                 </div>
                 <div class="register email_confirm">
                     <input
@@ -57,17 +57,22 @@
                     />
                     <label class="email_placeholder" for="email">이메일</label>
                     <span class="email_text_msg" style="color: red"
-                        >이메일 주소가 아닙니다!</span
+                        >이메일 주소가 아닙니다</span
                     >
                 </div>
-                <div class="register">
+                <div class="register first_password">
                     <input
                         type="password"
                         autocomplete="off"
                         id="password"
                         placeholder=" "
                     />
-                    <label for="password">비밀번호</label>
+                    <label class="first_password_placeholder" for="password"
+                        >비밀번호</label
+                    >
+                    <span class="first_password_text_msg" style="color: red"
+                        >적어도 한 문자는 포함이 되어야합니다</span
+                    >
                 </div>
                 <div class="register confirm">
                     <input

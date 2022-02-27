@@ -93,7 +93,7 @@ def register():
     }
     db.login.insert_one(doc)
     session["register"] = email
-    return jsonify({'msg': "이제 MBTI를 선택해 주세요!"})
+    return jsonify({'msg': "1차 회원가입 완료!"})
 
 # 2차 회원가입 MBTI 선택할수 있는 페이지 
 @app.route("/registration/mbti")
