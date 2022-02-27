@@ -93,7 +93,7 @@ def register():
     }
     db.login.insert_one(doc)
     session["register"] = email
-    return jsonify({'msg': "이제 MBTI를 선택해 주세요!"})
+    return jsonify({'msg': "1차 회원가입 완료!"})
 
 # 2차 회원가입 MBTI 선택할수 있는 페이지 
 @app.route("/registration/mbti")
@@ -119,10 +119,7 @@ def postmbti():
     session["register_mbti"] = request.form["mbti"]
     register_mbti = session["register_mbti"]
     register_user = session["register"]
-    mbti_list = register_mbti.lower()
-    # print(mbti_list, register_mbti) mbti 대소문자 구분 (그래프용)
     db.login.update_one({"email": register_user},{'$set':{"mbti": register_mbti }})
-    db.prac.insert_one({"mbti":mbti_list})
     return redirect(url_for("user"))
 
 
@@ -302,17 +299,11 @@ def graph():
 @app.route("/mbtiList", methods=["GET"])
 def user_get():
     user_list = list(db.prac.find({}, {'_id': False}))
-    print(user_list)
     # print(user_list)
     return jsonify({'user_list': user_list})
-
-# add_page 페이지
-
-@app.route('/add_page')
-def comingsooon():
-    return render_template('add_page.html')
 
 
 # 포트는 5000으로 설정함
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
+

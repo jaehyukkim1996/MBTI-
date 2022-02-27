@@ -8,7 +8,11 @@
 }
 
 body {
-    background-color: #24252A
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
 }
 
 .whole_page {
@@ -16,7 +20,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #24252A;
+    background: linear-gradient(
+        to bottom right,
+        rgba(36, 37, 42),
+        rgb(50, 51, 58)
+    );
     color: white;
     height: 100vh;
     width: 100vw;
@@ -25,8 +33,8 @@ body {
 }
 
 .registration {
+    padding: 40px;
     cursor: pointer;
-    margin-top: 100px;
 }
 
 .registration h1 {

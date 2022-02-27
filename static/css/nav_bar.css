@@ -26,7 +26,7 @@ header {
 
 .logo {
     cursor: pointer;
-    width: 160px;
+    width: 133px;
 }
 
 .nav__links {
@@ -42,12 +42,10 @@ header {
 
 .nav__links li a {
     transition: all 0.3s ease 0s;
-    padding: 6px 12px;
 }
 
 .nav__links li a:hover {
-    color: #0088a9;
-    border-bottom: 2px solid;
+    color: #0088a9
 }
 
 button {
@@ -65,19 +63,5 @@ button:hover {
 
 .test {
     color: white;
-}
-
-.logout {
-    display: inline-block;
-    margin-left: 50px;
-    margin-right: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    color: #0088a9;
-}
-
-.logo_box {
-    width: 250px;
-    text-align: center;
 }
 

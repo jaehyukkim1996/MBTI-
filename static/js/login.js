@@ -13,7 +13,7 @@ function login() {
             let dbpassword = response["msg"];
             if (dbpassword !== "not") {
                 if (inputpassword == dbpassword) {
-                    alert("환영합니다!!");
+                    alert("login success");
                     $.ajax({
                         type: "POST",
                         url: "/loginsuccess",
@@ -23,10 +23,10 @@ function login() {
                         ),
                     });
                 } else {
-                    alert("비밀번호가 틀립니다!");
+                    alert("wrong password");
                 }
             } else {
-                alert("이메일을 확인해 주세요!");
+                alert("user does not exist");
             }
         },
     });
@@ -37,5 +37,5 @@ function register() {
 }
 
 function forgotpassword() {
-    alert("죄송해요.. 이 서비스는 준비 중입니다..!");
+    alert("죄송해요 현재는 이 서비스는 불가합니다");
 }
