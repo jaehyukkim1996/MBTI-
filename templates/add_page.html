@@ -47,8 +47,8 @@
         </ul>
     </nav>
     <div>
-        <button id="about-us" onclick="handleAboutClick()">About 18조</button>
         <li class="logout" onclick="logout()">로그아웃</li>
+        <button id="about-us" onclick="handleAboutClick()">About 18조</button>
     </div>
 </header>
 <div id="about-us-article" style="display: none">
@@ -207,6 +207,6 @@
     <div class="snowflake">❆</div>
     <div class="snowflake">❄</div>
 </div>
-
+<script src="{{ url_for('static', filename='js/add_page.js') }}"></script>
 </body>
 </html>

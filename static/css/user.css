@@ -45,13 +45,9 @@ body {
     font-size: 30px;
 }
 
-
 #about-us {
     width: 150px;
     height: 50px;
-    position: absolute;
-    right: 32px;
-    top: 10px;
     font-weight: 500;
     font-size: 16px;
     color: #edf0f1;
@@ -89,6 +85,7 @@ body {
     align-items: center;
     margin: 0 10px;
     padding: 10px 10px;
+    background-color: rgba(46, 47, 52, 1);
 }
 
 .divider {
@@ -111,28 +108,37 @@ body {
 }
 
 .profile-contents {
+    background-color: rgba(46, 47, 52, 1);
     display: flex;
     flex-direction: column;
     padding: 10px 0 10px 30px;
     color: whitesmoke;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .profile-contents span {
     padding: 2px 0;
+    background-color: rgba(46, 47, 52, 1);
+}
+
+.profile-contents span a {
+    background-color: rgba(46, 47, 52, 1);
 }
 
 .profile-contents a:link {
     text-decoration: none;
+    font-family: "Jua", sans-serif;
     color: whitesmoke;
 }
 
 .profile-contents span:hover a {
     text-decoration: none;
+    font-family: "Jua", sans-serif;
     color: tomato;
 }
 
 .profile-contents a:visited {
     text-decoration: none;
+    font-family: "Jua", sans-serif;
     color: whitesmoke;
 }

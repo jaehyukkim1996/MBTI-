@@ -478,8 +478,8 @@
         </ul>
     </nav>
     <div>
-    <button id="about-us" onclick="handleAboutClick()">About 18조</button>
     <li class="logout" onclick="logout()">로그아웃</li>
+    <button id="about-us" onclick="handleAboutClick()">About 18조</button>
     </div>
 
 </header>
@@ -638,6 +638,6 @@
         <canvas id="mbtiJP" width="300" height="300"></canvas>
     </div>
 </div>
-
+<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
 </body>
 </html>
