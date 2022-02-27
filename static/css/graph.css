@@ -1,130 +1,222 @@
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        height: 100vh;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #24252A;
-    }
+body {
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #24252A;
+}
 
-    .title {
-        text-align: center;
-        font-size: 30px;
-        font-weight: bold;
-        margin-top: 70px;
-    }
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 70px;
+}
 
-    .chart-container {
-        #height:
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
+.chart-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
-    #myChart {
-        margin: 0 auto;
-    }
+#myChart {
+    margin: 0 auto;
+}
 
-    .mbti-circles {
-        display: flex;
-    }
+.mbti-circles {
+    display: flex;
+}
 
-    .mbti-circle {
-        position: relative;
-        margin: 20px 35px;
-    }
+.mbti-circle {
+    position: relative;
+    margin: 20px 35px;
+}
 
-    .left {
-        position: absolute;
-        left: 0;
-        top: 155px;
-    }
+.left {
+    position: absolute;
+    left: 0;
+    top: 155px;
+}
 
-    .right {
-        position: absolute;
-        right: 0;
-        top: 155px;
-    }
+.right {
+    position: absolute;
+    right: 0;
+    top: 155px;
+}
 
-    li, a, button {
-        font-family: "Monsterrat", sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        color: #edf0f1;
-        text-decoration: none;
-    }
+li, a, button {
+    font-family: "Monsterrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 30px 10%;
-        width: 100%
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%
+}
 
-    .nav__links {
-        list-style: none;
-        text-align: center;
-        margin: auto;
-    }
+.nav__links {
+    list-style: none;
+    text-align: center;
+    margin: auto;
+}
 
-    .nav__links li {
-        display: inline-block;
-        padding: 0px 20px;
-    }
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
 
-    .nav__links li a {
-        transition: all 0.3s ease 0s;
-        padding: 6px 12px;
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    padding: 6px 12px;
 
-    }
+}
 
-    .nav__links li a:hover {
-        color: #0088a9;
-        border-bottom: 2px solid;
-    }
+.nav__links li a:hover {
+    color: #0088a9;
+    border-bottom: 2px solid;
+}
 
-    button {
-        padding: 9px 25px;
-        background-color: rgba(0, 136, 169, 1);
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-    }
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
 
-    button:hover {
-        background-color: rgba(0, 136, 169, 0.8);
-    }
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
 
-    .test {
-        color: white;
-    }
+.test {
+    color: white;
+}
 
-    .logout {
-        display: inline-block;
-        margin-left: 50px;
-        margin-right: 20px;
-        cursor: pointer;
-        font-size: 12px;
-        color: #0088a9;
-    }
+.logout {
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #0088a9;
+}
 
-    .logo_box {
-        width: 250px;
-        text-align: center;
-    }
+.logo_box {
+    width: 250px;
+    text-align: center;
+}
 
-    .logo {
-        cursor: pointer;
-        width: 160px;
-    }
+.logo {
+    cursor: pointer;
+    width: 160px;
+}
 
+
+#about-us {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    right: 32px;
+    top: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#about-us:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+#about-us-article {
+    z-index: 100;
+    position: absolute;
+    right: 80px;
+    top: 80px;
+    background-color: rgba(46, 47, 52, 1);
+    border: 1px solid tomato;
+    border-radius: 30px 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 0 10px 10px 10px;
+}
+
+#about-us-article .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px 10px;
+}
+
+.divider {
+    transform: translateX(5%);
+    width: 90%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#about-us-article .profile:last-child {
+    border-bottom: none;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: center;
+    object-fit: cover;
+}
+
+.profile-contents {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 30px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.profile-contents span {
+    padding: 2px 0;
+}
+
+.profile-contents a:link {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.profile-contents span:hover a {
+    text-decoration: none;
+    color: tomato;
+}
+
+.profile-contents a:visited {
+    text-decoration: none;
+    color: whitesmoke;
+}
