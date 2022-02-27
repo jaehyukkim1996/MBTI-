@@ -16,153 +16,18 @@
             crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename= 'css/graph.css') }}">
 
-    <title>항해99 6기 MBTI</title>
+    <title>#MBTI99_graph</title>
 
-    <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            height: 100vh;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #24252A;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 70px;
-        }
-
-        .chart-container {
-            {#height:#}
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-
-        #myChart {
-            margin: 0 auto;
-        }
-
-        .mbti-circles {
-            display: flex;
-        }
-
-        .mbti-circle {
-            position: relative;
-            margin: 20px 35px;
-        }
-
-        .left {
-            position: absolute;
-            left: 0;
-            top: 155px;
-        }
-
-        .right {
-            position: absolute;
-            right: 0;
-            top: 155px;
-        }
-
-        li, a, button {
-            font-family: "Monsterrat", sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #edf0f1;
-            text-decoration: none;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 10%;
-            width: 100%
-
-        }
-
-        .logo {
-            cursor: pointer;
-            width: 133px;
-        }
-
-        .nav__links {
-            list-style: none;
-            text-align: center;
-            margin: auto;
-            display: -webkit-box;
-            display: flex;
-            -webkit-box-pack: center;
-                    justify-content: center;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-
-        .nav__links li {
-            display: inline-block;
-            padding: 0px 20px;
-        }
-
-        .nav__links li a {
-            transition: all 0.3s ease 0s;
-            display: block;
-            font-size: 20px;
-            text-decoration: none;
-            padding: 1px 15px;
-        }
-
-        .nav__links li a:hover {
-            color: #0088a9
-        }
-
-        .target {
-            position: absolute;
-            border-bottom: 4px solid transparent;
-        }
-
-        .mynav a,
-        .target {
-            -webkit-transition: all .35s ease-in-out;
-            transition: all .35s ease-in-out;
-        }
-
-        button {
-            padding: 9px 25px;
-            background-color: rgba(0, 136, 169, 1);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-        }
-
-        button:hover {
-            background-color: rgba(0, 136, 169, 0.8);
-        }
-
-        .test {
-            color: white;
-
-        }
-
-    </style>
     <script>
-        let user_mbti = "intj";
         $(document).ready(function () {
             show_stat();
         });
+
+        function logout() {
+            window.location.assign("http://localhost:5000/logout");
+        }
 
         function show_stat() {
             $.ajax({
@@ -170,6 +35,13 @@
                 url: "/mbtiList",
                 data: {},
                 success: function (response) {
+                    {#console.log(response)#}
+                    let mbti_length = response['user_list'].length
+                    {#console.log(mbti_length)#}
+                    let usermbti = response['user_list'][(mbti_length)-1]['mbti']
+                    {#console.log(user_mbti)#}
+                    let user_mbti = usermbti.split('')
+                    {#console.log(user_mbti)#}
                     let mbti_arr = [
                         {mbti: "istj", count: 0},
                         {mbti: "istp", count: 0},
@@ -204,6 +76,7 @@
                     for (let i = 0; i < rows.length; i++) {
                         let mbti = rows[i]["mbti"];
                         `1`;
+                        {#console.log(mbti)#}
                         switch (mbti) {
                             case "istj":
                                 mbti_arr[0].count += 1;
@@ -212,6 +85,7 @@
                                 mbti_detail.t += 1;
                                 mbti_detail.j += 1;
                                 break;
+
                             case "istp":
                                 mbti_arr[1].count += 1;
                                 mbti_detail.i += 1;
@@ -319,6 +193,12 @@
                                 break;
                         }
                     }
+
+                    {#console.log(mbti_arr[0])#}
+                    {#console.log(mbti_detail.i)#}
+                    {#console.log(mbti_detail.s)#}
+                    {#console.log(mbti_detail.t)#}
+                    {#console.log(mbti_detail.j)#}
 
                     const ctx = $("#myChart");
                     let dataSet = mbti_arr.map((obj) => obj.count);
@@ -587,75 +467,160 @@
 </head>
 <body>
 <header>
-    <a class="logo">MBTI</a>
-    <nav class="mynav">
+    <div class="logo_box">
+        <img class="logo" src="{{ url_for('static', filename='img/logo2.jpg') }}" alt="logo">
+    </div>
+    <nav>
         <ul class="nav__links">
-            <li><a href="/graph">통계</a></li>
-            <li><a href="/user">나랑 같은 MBTI</a></li>
+            <li><a href="/user">나의 MBTI</a></li>
+            <li><a href="/graph">항해 TI</a></li>
             <li><a href="/add_page">추가기능</a></li>
         </ul>
     </nav>
-    <span class="target"></span>
-    <a class="cta" href="#">
-        <button>About 18조</button>
-    </a>
+    <div>
+    <li class="logout" onclick="logout()">로그아웃</li>
+    <button id="about-us" onclick="handleAboutClick()">About 18조</button>
+    </div>
 
-        <script>
-        const target = document.querySelector('.target')
-        const links = document.querySelectorAll('.mynav a')
-        const colors = ['deepskyblue','orange','black','gold','green','pink','yellow']
-
-        //링크색상 변경
-        // links[0].addEventListener('click', function (){})
-
-        for ( let i = 0; i < links.length; i++ ) {
-            links[i].addEventListener('click', (e) => e.preventDefault())
-            links[i].addEventListener('mouseenter', mouseenterFunc)
-        }
-
-        function mouseenterFunc() {
-            if (!this.parentNode.classList.contains('active')) {
-                for ( let i=0; i < links.length; i++) {
-                    if( links[i].parentNode.classList.contains('active')){
-                        links[i].parentNode.classList.remove(('active'))
-                    }
-                    links[i].style.opacity = '0.25';
-                }//마우스가 올라가지않은 다른메뉴들 마다 할일
-
-                this.parentNode.classList.add('active')
-                this.style.opacity = '1'
-
-                const width = this.getBoundingClientRect().width
-                const height = this.getBoundingClientRect().height
-                const left = this.getBoundingClientRect().left + window.pageXOffset
-                const top = this.getBoundingClientRect().top + window.pageYOffset
-                const color = colors[Math.floor(Math.random() * links.length)]
-
-                target.style.width = `${width}px`
-                target.style.height = `${height}px`
-                target.style.left = `${left}px`
-                target.style.right = `${top}px`
-                target.style.borderColor = color;
-
-            }
-        }
-
-        function resizeFunc() {
-            const active = document.querySelector('.mynav li.active')
-
-            if(active) {
-                const left = active.getBoundingClientRect().left + window.pageXOffset
-                const top = active.getBoundingClientRect().top + window.pageYOffset
-
-                target.style.left = `${left}px`
-                target.style.right = `${top}px`
-            }
-        }
-        window.addEventListener('resize', resizeFunc)
-    </script>
 </header>
-
-
+<div id="about-us-article" style="display: none">
+    <div class="profile">
+        <img
+                class="profile-img"
+                src="../static/img/ksj.jpg"
+                alt=""
+        />
+        <div class="profile-contents">
+            <span>이름: 강성지</span>
+            <span>MBTI: INFP</span>
+            <span>취미: 축구</span>
+            <span>소개: 팀원들 하드캐리에 멱살 잡혀 끌려가는 배</span>
+            <span
+            ><a
+                    href="https://ji-coding.tistory.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >블로그: 지코딩</a
+            ></span
+            >
+            <span
+            ><a
+                    href="https://github.com/Co-Ji"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >깃헙: Co-Ji</a
+            ></span
+            >
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="profile">
+        <img class="profile-img" src="../static/img/kjh.jpg" alt=""/>
+        <div class="profile-contents">
+            <span>이름: 김재혁</span>
+            <span>MBTI: ENFP</span>
+            <span>전공: 정치</span>
+            <span>취미: 롤, 비트만들기</span>
+            <span
+            ><a
+                    href="https://polscodinglog.tistory.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >블로그: Pol's 코딩 일지</a
+            ></span
+            >
+            <span
+            ><a
+                    href="https://github.com/jaehyukkim1996"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >깃헙: jaehyukkim1996</a
+            ></span
+            >
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="profile">
+        <img class="profile-img" src="../static/img/pjc.png" alt=""/>
+        <div class="profile-contents">
+            <span>이름: 박재철</span>
+            <span>MBTI: INTJ</span>
+            <span>전공: 건축</span>
+            <span>취미: 등산, XBOX</span>
+            <span
+            ><a
+                    href="https://reload1bronze.tistory.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >블로그: 오늘의 모험</a
+            ></span
+            >
+            <span
+            ><a
+                    href="https://github.com/reload1bronze"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >깃헙: reload1bronze</a
+            ></span
+            >
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="profile">
+        <img
+                class="profile-img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB-7F8PFDCDI4onQDJ7Iymp0Aeq6KC6UIzhQ&usqp=CAU"
+                alt=""
+        />
+        <div class="profile-contents">
+            <span>이름: 윤영수</span>
+            <span>MBTI: </span>
+            <span>취미: </span>
+            <span
+            ><a
+                    href="https://0ggurogi.tistory.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >블로그: 꾸러기 코딩일기</a
+            ></span
+            >
+            <span
+            ><a
+                    href="https://github.com/tayyoon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >깃헙: tayyoon</a
+            ></span
+            >
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="profile">
+        <img
+                class="profile-img"
+                src="https://w.namu.la/s/6ec0825609d8987849dfb6894cc122e41c304ca1516947442d8e64a660a533813814af95f791c9ca029383628a897b3823d2ef6a2ee886cec2604c84a7b1981dc08ee6781476a7bd54e18ec20a635b27"
+                alt=""
+        />
+        <div class="profile-contents">
+            <span>이름: 한재혁</span>
+            <span>MBTI: </span>
+            <span>취미: </span>
+            <span
+            ><a
+                    href="https://jaehyeoks.tistory.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >블로그: 한재혁(6기)개발일지</a
+            ></span
+            >
+            <span
+            ><a href="#" target="_blank" rel="noopener noreferrer"
+            >깃헙:
+            </a></span
+            >
+        </div>
+    </div>
+</div>
 
 <canvas id="myChart" width="850" height="410"></canvas>
 
@@ -673,6 +638,6 @@
         <canvas id="mbtiJP" width="300" height="300"></canvas>
     </div>
 </div>
-
+<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
 </body>
 </html>

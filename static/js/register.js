@@ -3,11 +3,7 @@ function register() {
     let email = $("#email").val();
     let password = $("#password").val();
     let password_confirm = $("#password_confirm").val();
-    if (
-        email.includes("@") == true &&
-        password == password_confirm &&
-        password.length >= 1
-    ) {
+    if (email.includes("@") == true && password == password_confirm) {
         $.ajax({
             type: "POST",
             url: "/register",
@@ -41,17 +37,6 @@ function register() {
         $(".password_placeholder").show();
         $("#password_confirm").removeClass("wrong_password");
         $("#password_confirm").removeClass("shake");
-    }
-    if (password.length == 0) {
-        $(".first_password_text_msg").show();
-        $(".first_password_placeholder").hide();
-        $("#password").addClass("wrong_password");
-        $("#password").addClass("shake");
-    } else if (password.length >= 0) {
-        $(".first_password_text_msg").hide();
-        $(".first_password_placeholder").show();
-        $("#password").removeClass("wrong_password");
-        $("#password").removeClass("shake");
     }
 }
 

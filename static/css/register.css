@@ -17,11 +17,7 @@ body {
 
 .whole_page {
     height: 100vh;
-    background: linear-gradient(
-        to bottom right,
-        rgba(36, 37, 42),
-        rgb(50, 51, 58)
-    );
+    background-color: #24252A;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -140,16 +136,6 @@ input:focus {
 }
 
 .confirm .password_text_msg {
-    display: none;
-    position: absolute;
-    left: 0;
-}
-
-.first_password {
-    position: relative;
-}
-
-.first_password_text_msg {
     display: none;
     position: absolute;
     left: 0;
