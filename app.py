@@ -12,6 +12,8 @@ db = client.dbsparta
 
 app = Flask(__name__)
 
+print("박재철: PR 테스트입니다.")
+
 # 세션을 사용하려면 시크릿 키가 필요하다 (기본세팅)
 app.secret_key = "hello"
 # 세션이 유저의 브라우저에 저장되는 시간, 이후 자동 로그아웃이 된다 
